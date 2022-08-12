@@ -30,5 +30,10 @@ namespace UserRegistration
             string pattern = "^[A-Z][a-z]{2}";
             TestRegex(lastName, pattern);
         }
+        public void ValidateEmail(string emailID)
+        {
+            string pattern = "^[a-z]+(.[a-z]+)?(@[a-z]+[.][a-z]+)(.[a-z]+)?";
+            TestRegex(emailID, pattern);
+        }
     }
 }

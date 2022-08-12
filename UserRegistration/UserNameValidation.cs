@@ -37,8 +37,13 @@ namespace UserRegistration
         }
         public void ValidateMobileNum(string mobileNum)
         {
-            string pattern = "^[0-9]{2}[ ][0-9]{10}";
+            string pattern = "^[0-9]{2}[ ][0-9]{10}$";
             TestRegex(mobileNum, pattern);
+        }
+        public void ValidatePassword(string password)
+        {
+            string pattern = "^[0-9]{8}$";
+            TestRegex(password, pattern);
         }
     }
 }

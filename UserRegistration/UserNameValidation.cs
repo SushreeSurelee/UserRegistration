@@ -9,24 +9,26 @@ namespace UserRegistration
 {
     class UserNameValidation
     {
-        public void TestRegex(string input, string pattern)
+        public void TestRegex(string input,string pattern)
         {
-
             if (Regex.IsMatch(input, pattern))
             {
-                Console.WriteLine("Valid");
+                Console.WriteLine("Valid\n");
             }
             else
             {
-                Console.WriteLine("Invalid");
+                Console.WriteLine("Invalid\n");
             }
         }
-        public void Validation()
+        public void ValidateFirstName(string firstName)
         {
-            Console.WriteLine("Enter the user name");
-            string input = Console.ReadLine();
             string pattern = "^[A-Z][a-z]{2}";
-            TestRegex(input, pattern);
+            TestRegex(firstName, pattern);
+        }
+        public void ValidateLastName(string lastName)
+        {
+            string pattern = "^[A-Z][a-z]{2}";
+            TestRegex(lastName, pattern);
         }
     }
 }

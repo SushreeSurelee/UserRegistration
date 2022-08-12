@@ -10,8 +10,15 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcom to Regular Expression Program\n");
             UserNameValidation userName = new UserNameValidation();
-            userName.Validation();
+            Console.WriteLine("Enter First name: ");
+            string firstName = Console.ReadLine();
+            userName.ValidateFirstName(firstName);
+            
+            Console.WriteLine("Enter Last name: ");
+            string lastName = Console.ReadLine();
+            userName.ValidateFirstName(lastName);
             Console.ReadLine();
         }
     }

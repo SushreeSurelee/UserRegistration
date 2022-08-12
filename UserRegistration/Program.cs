@@ -11,11 +11,12 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             Console.WriteLine("Welcom to Regular Expression Program\n");
-            UserNameValidation userName = new UserNameValidation();
+            UserDetailsValidation userName = new UserDetailsValidation();
+
             Console.WriteLine("Enter First name: ");
             string firstName = Console.ReadLine();
             userName.ValidateFirstName(firstName);
-            
+
             Console.WriteLine("Enter Last name: ");
             string lastName = Console.ReadLine();
             userName.ValidateFirstName(lastName);
@@ -23,6 +24,11 @@ namespace UserRegistration
             Console.WriteLine("Enter a email ID: ");
             string emailID = Console.ReadLine();
             userName.ValidateEmail(emailID);
+
+            Console.WriteLine("Enter a Mobile number with country code: ");
+            string mobileNum = Console.ReadLine();
+            userName.ValidateMobileNum(mobileNum);
+
             Console.ReadLine();
 
 

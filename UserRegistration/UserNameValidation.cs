@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UserRegistration
 {
-    class UserNameValidation
+    class UserDetailsValidation
     {
         public void TestRegex(string input,string pattern)
         {
@@ -34,6 +34,11 @@ namespace UserRegistration
         {
             string pattern = "^[a-z]+(.[a-z]+)?(@[a-z]+[.][a-z]+)(.[a-z]+)?";
             TestRegex(emailID, pattern);
+        }
+        public void ValidateMobileNum(string mobileNum)
+        {
+            string pattern = "^[0-9]{2}[ ][0-9]{10}";
+            TestRegex(mobileNum, pattern);
         }
     }
 }

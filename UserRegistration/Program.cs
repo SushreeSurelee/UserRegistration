@@ -10,6 +10,9 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
+            UserNameValidation userName = new UserNameValidation();
+            userName.Validation();
+            Console.ReadLine();
         }
     }
 }

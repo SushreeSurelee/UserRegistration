@@ -45,5 +45,24 @@ namespace UserRegistration
             string pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-])[0-9a-zA-Z#?!@$%^&*-]{8,}";
             TestRegex(password, pattern);
         }
+        public void TestMultipleEmails(string[] inputs, string pattern)
+        {
+            foreach (string input in inputs)
+            {
+                if (Regex.IsMatch(input, pattern))
+                {
+                    Console.WriteLine("{0} - Valid",input);
+                }
+                else
+                {
+                    Console.WriteLine("{0} - Invalid",input);
+                }
+            }
+        }
+        public void ValidateMultipleEmails(string[] input)
+        {
+            string pattern = "^[0-9a-z]+([._+-][0-9a-z]+)?(@[0-9a-z]+[.][a-z]{2,})(.[a-z]{2,})?$";
+            TestMultipleEmails(input, pattern);
+        }
     }
 }

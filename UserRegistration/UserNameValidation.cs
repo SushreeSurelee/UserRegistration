@@ -7,43 +7,43 @@ using System.Threading.Tasks;
 
 namespace UserRegistration
 {
-    class UserDetailsValidation
+    public class UserDetailsValidation
     {
-        public void TestRegex(string input,string pattern)
+        public string TestRegex(string input,string pattern)
         {
             if (Regex.IsMatch(input, pattern))
             {
-                Console.WriteLine("Valid\n");
+                return "valid";
             }
             else
             {
-                Console.WriteLine("Invalid\n");
+                return "invalid";
             }
         }
-        public void ValidateFirstName(string firstName)
+        public string ValidateFirstName(string firstName)
         {
-            string pattern = "^[A-Z][a-z]{2}";
-            TestRegex(firstName, pattern);
+            string pattern = "^[A-Z][a-z]{3,}$";
+            return TestRegex(firstName, pattern);
         }
-        public void ValidateLastName(string lastName)
+        public string ValidateLastName(string lastName)
         {
-            string pattern = "^[A-Z][a-z]{2}";
-            TestRegex(lastName, pattern);
+            string pattern = "^[A-Z][a-z]{2,}$";
+            return TestRegex(lastName, pattern);
         }
-        public void ValidateEmail(string emailID)
+        public string ValidateEmail(string emailID)
         {
             string pattern = "^[a-z]+(.[a-z]+)?(@[a-z]+[.][a-z]+)(.[a-z]+)?";
-            TestRegex(emailID, pattern);
+            return TestRegex(emailID, pattern);
         }
-        public void ValidateMobileNum(string mobileNum)
+        public string ValidateMobileNum(string mobileNum)
         {
             string pattern = "^[0-9]{2}[ ][0-9]{10}$";
-            TestRegex(mobileNum, pattern);
+            return TestRegex(mobileNum, pattern);
         }
-        public void ValidatePassword(string password)
+        public string ValidatePassword(string password)
         {
             string pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-])[0-9a-zA-Z#?!@$%^&*-]{8,}";
-            TestRegex(password, pattern);
+            return TestRegex (password, pattern);
         }
         public void TestMultipleEmails(string[] inputs, string pattern)
         {
@@ -51,18 +51,18 @@ namespace UserRegistration
             {
                 if (Regex.IsMatch(input, pattern))
                 {
-                    Console.WriteLine("{0} - Valid",input);
+                    Console.WriteLine("valid");
                 }
                 else
                 {
-                    Console.WriteLine("{0} - Invalid",input);
+                    Console.WriteLine("invalid");
                 }
             }
         }
-        public void ValidateMultipleEmails(string[] input)
+        public string ValidateMultipleEmails(string emails)
         {
             string pattern = "^[0-9a-z]+([._+-][0-9a-z]+)?(@[0-9a-z]+[.][a-z]{2,})(.[a-z]{2,})?$";
-            TestMultipleEmails(input, pattern);
+            return TestRegex(emails, pattern);
         }
     }
 }

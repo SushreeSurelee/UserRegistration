@@ -14,8 +14,8 @@ namespace UserRegistration
             UserDetailsValidation userName = new UserDetailsValidation();
 
             //Console.WriteLine("Enter First name: ");
-            //string firstName = Console.ReadLine();
-            //userName.ValidateFirstName(firstName);
+            string firstName = null;
+            userName.ValidateFirstName(firstName);
 
             //Console.WriteLine("Enter Last name: ");
             //string lastName = Console.ReadLine();

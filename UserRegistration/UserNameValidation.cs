@@ -11,6 +11,7 @@ namespace UserRegistration
     {
         public string TestRegex(string input,string pattern)
         {
+
             if (Regex.IsMatch(input, pattern))
             {
                 return "valid";
@@ -22,28 +23,68 @@ namespace UserRegistration
         }
         public string ValidateFirstName(string firstName)
         {
-            string pattern = "^[A-Z][a-z]{3,}$";
-            return TestRegex(firstName, pattern);
+            try
+            {
+                string pattern = "^[A-Z][a-z]{3,}$";
+                return TestRegex(firstName, pattern);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "Value cannot be null";
+            }
         }
         public string ValidateLastName(string lastName)
         {
-            string pattern = "^[A-Z][a-z]{2,}$";
-            return TestRegex(lastName, pattern);
+            try
+            {
+                string pattern = "^[A-Z][a-z]{2,}$";
+                return TestRegex(lastName, pattern);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "Value cannot be null";
+            }
         }
         public string ValidateEmail(string emailID)
         {
-            string pattern = "^[a-z]+(.[a-z]+)?(@[a-z]+[.][a-z]+)(.[a-z]+)?";
-            return TestRegex(emailID, pattern);
+            try
+            {
+                string pattern = "^[a-z]+(.[a-z]+)?(@[a-z]+[.][a-z]+)(.[a-z]+)?";
+                return TestRegex(emailID, pattern);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "Value cannot be null";
+            }
         }
         public string ValidateMobileNum(string mobileNum)
         {
-            string pattern = "^[0-9]{2}[ ][0-9]{10}$";
-            return TestRegex(mobileNum, pattern);
+            try
+            {
+                string pattern = "^[0-9]{2}[ ][0-9]{10}$";
+                return TestRegex(mobileNum, pattern);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "Value cannot be null";
+            }
         }
         public string ValidatePassword(string password)
         {
-            string pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-])[0-9a-zA-Z#?!@$%^&*-]{8,}";
-            return TestRegex (password, pattern);
+            try
+            {
+                string pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-])[0-9a-zA-Z#?!@$%^&*-]{8,}";
+                return TestRegex(password, pattern);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "Value cannot be null";
+            }
         }
         public void TestMultipleEmails(string[] inputs, string pattern)
         {
@@ -61,8 +102,16 @@ namespace UserRegistration
         }
         public string ValidateMultipleEmails(string emails)
         {
-            string pattern = "^[0-9a-z]+([._+-][0-9a-z]+)?(@[0-9a-z]+[.][a-z]{2,})(.[a-z]{2,})?$";
-            return TestRegex(emails, pattern);
+            try
+            {
+                string pattern = "^[0-9a-z]+([._+-][0-9a-z]+)?(@[0-9a-z]+[.][a-z]{2,})(.[a-z]{2,})?$";
+                return TestRegex(emails, pattern);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return "Value cannot be null";
+            }
         }
     }
 }

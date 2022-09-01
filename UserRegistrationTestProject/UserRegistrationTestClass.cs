@@ -12,6 +12,7 @@ namespace UserRegistrationTestProject
         [DataRow("N", "invalid")]
         [DataRow("nikki", "invalid")]
         [DataRow("Nikki1", "invalid")]
+        [DataRow(null, "Value cannot be null")]
         public void ShouldCheckForValidFirstName(string msg,string expected)
         {
             UserDetailsValidation userDetailsValidation = new UserDetailsValidation();
@@ -26,6 +27,7 @@ namespace UserRegistrationTestProject
         [DataRow("S", "invalid")]
         [DataRow("sahu", "invalid")]
         [DataRow("Sahu1", "invalid")]
+        [DataRow(null, "Value cannot be null")]
         public void ShouldCheckForValidLastName(string msg, string expected)
         {
             UserDetailsValidation userDetailsValidation = new UserDetailsValidation();
@@ -40,6 +42,7 @@ namespace UserRegistrationTestProject
         [DataRow("4543234323", "invalid")]
         [DataRow("1 4565456456", "invalid")]
         [DataRow("92 45345", "invalid")]
+        [DataRow(null, "Value cannot be null")]
         public void ShouldCheckForValidMobileNumber(string msg, string expected)
         {
             UserDetailsValidation userDetailsValidation = new UserDetailsValidation();
@@ -55,6 +58,7 @@ namespace UserRegistrationTestProject
         [DataRow("abc@#Afsf", "invalid")]
         [DataRow("abc12Afsf", "invalid")]
         [DataRow("ABC12@Afsf", "valid")]
+        [DataRow(null, "Value cannot be null")]
         public void ShouldCheckForValidPassword(string msg, string expected)
         {
             UserDetailsValidation userDetailsValidation = new UserDetailsValidation();
@@ -87,6 +91,7 @@ namespace UserRegistrationTestProject
         [DataRow("abc@abc@gmail.com", "invalid")]
         [DataRow("abc@gmail.com.1a", "invalid")]
         [DataRow("abc@gmail.com.aa.au", "invalid")]
+        [DataRow(null, "Value cannot be null")]
         public void ShouldCheckForValidandInvalidEmails(string msg,string expected)
         {
             UserDetailsValidation userDetailsValidation = new UserDetailsValidation();
